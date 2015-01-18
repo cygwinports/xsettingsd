@@ -27,6 +27,6 @@ src_test() {
 
 src_install() {
 	cd ${B}
-	dobin *.exe
-	doman *.1
+	dobin {dump_xsettings,xsettingsd}.exe
+	doman {dump_xsettings,xsettingsd}.1
 }
