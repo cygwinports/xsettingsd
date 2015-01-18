@@ -1,0 +1,20 @@
+--- origsrc/xsettingsd-2a516a91d8352b3b93a7a1ef5606dbd21fa06b7c/SConstruct	2014-11-22 23:12:49.000000000 -0600
++++ src/xsettingsd-2a516a91d8352b3b93a7a1ef5606dbd21fa06b7c/SConstruct	2015-01-18 00:27:17.198172100 -0600
+@@ -46,7 +46,7 @@ env.Append(CPPFLAGS = os.environ.get('CP
+            CXXFLAGS = os.environ.get('CXXFLAGS', ''),
+            LDFLAGS = os.environ.get('LDFLAGS', ''))
+ 
+-env.Append(CCFLAGS = '-Wall -Werror')
++env.Append(CCFLAGS = '-Wall')
+ 
+ 
+ srcs = Split('''\
+@@ -68,7 +68,7 @@ Default([xsettingsd, dump_xsettings])
+ 
+ 
+ test_env = env.Clone()
+-test_env.Append(CCFLAGS=' -D__TESTING', LINKFLAGS=' -lgtest')
++test_env.Append(CCFLAGS=' -D__TESTING', LIBS='gtest')
+ 
+ tests = []
+ for file in Glob('*_test.cc', strings=True):

@@ -1,0 +1,32 @@
+NAME="xsettingsd"
+VERSION=20141122
+RELEASE=1
+CATEGORY="X11"
+SUMMARY="Standalone XSETTINGS daemon"
+DESCRIPTION="It is intended to be small, fast, and minimally dependent on other
+libraries.  It can serve as an alternative to gnome-settings-daemon for users
+who are not using the GNOME desktop environment but who still run GTK+ apps and
+want to configure things such as themes, font antialiasing/hinting, and UI
+sound effects."
+HOMEPAGE="http://code.google.com/p/xsettingsd/"
+commit=2a516a91d8352b3b93a7a1ef5606dbd21fa06b7c
+SRC_URI="https://github.com/derat/xsettingsd/archive/${commit}/xsettingsd-${commit}.tar.gz"
+SRC_DIR="xsettingsd-${commit}"
+PATCH_URI="20141122-tests-build.patch"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	scons
+}
+
+src_test() {
+	cd ${B}
+	scons test
+}
+
+src_install() {
+	cd ${B}
+	dobin *.exe
+	doman *.1
+}
