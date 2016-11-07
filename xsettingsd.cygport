@@ -1,6 +1,6 @@
 NAME="xsettingsd"
-VERSION=20141122
-RELEASE=1
+VERSION=0
+RELEASE=1.20150614git
 CATEGORY="X11"
 SUMMARY="Standalone XSETTINGS daemon"
 DESCRIPTION="It is intended to be small, fast, and minimally dependent on other
@@ -9,10 +9,9 @@ who are not using the GNOME desktop environment but who still run GTK+ apps and
 want to configure things such as themes, font antialiasing/hinting, and UI
 sound effects."
 HOMEPAGE="https://github.com/derat/xsettingsd/"
-commit=2a516a91d8352b3b93a7a1ef5606dbd21fa06b7c
+commit=b4999f5e9e99224caf97d09f25ee731774ecd7be
 SRC_URI="https://github.com/derat/xsettingsd/archive/${commit}/xsettingsd-${commit}.tar.gz"
 SRC_DIR="xsettingsd-${commit}"
-PATCH_URI="20141122-tests-build.patch"
 
 src_compile() {
 	lndirs
